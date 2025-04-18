@@ -1,0 +1,29 @@
+
+.title {
+    color: #C69228;
+    font-family: 'Playfair Display', serif;
+}
+
+.description {
+    color: #7A7A7A;
+    font-family: 'Playfair Display', serif;
+}
+
+.whatsappButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #C69228;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 53px;
+    height: 53px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
