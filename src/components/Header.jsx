@@ -3,9 +3,9 @@ import Logo from "../assets/logoJc.png";
 
 const Header = () => {
     return (
-        <nav className="navbar bg-body-tertiary fixed-top">
+        <nav className="navbar fixed-top">
             <div className="container-fluid">
-                <a className="navbar-brand p-0" href="#">
+                <a className="navbar-brand p-0" href="/">
                     <img src={Logo} alt="Logo" width="45" height="45" className="p-0" />
                 </a>
             </div>

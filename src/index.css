@@ -1,4 +1,28 @@
+/* Estilo del body */
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+}
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 16px 16px;
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Estilos del titulo y la descripción */
 .title {
     color: #C69228;
     font-family: 'Playfair Display', serif;
@@ -9,6 +33,7 @@
     font-family: 'Playfair Display', serif;
 }
 
+/* Estilos del boton de whatsapp */
 .whatsappButton {
     position: fixed;
     bottom: 20px;
@@ -25,5 +50,102 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Estilos de la card */
+.constainerCard {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.productCard {
+    width: 32%;
+    margin-bottom: 15px;
+}
+
+.contentCard {
+    width: 100%;
+    height: 520px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.contentCard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.contentCard:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.contentCard:hover::after {
+    opacity: 1;
+}
+
+.productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.contentCard:hover .productImg {
+    transform: scale(1.08) translateY(-5px);
+}
+
+.textCard {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Responsivo para pantallas más pequeñas */
+@media (max-width: 968px) {
+    .constainerCard {
+        gap: 7px;
+    }
+
+    .productCard {
+        width: 49%;
+    }
+
+    .contentCard {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    .constainerCard {
+        gap: 9px;
+    }
+
+    .productCard {
+        width: 48%;
+    }
+
+    .contentCard {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    .textCard {
+        font-size: 16px;
+    }
 }
 
